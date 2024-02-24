@@ -1,33 +1,35 @@
 package com.example.controller;
 
 import com.example.common.Result;
-import com.example.entity.Notice;
-import com.example.service.NoticeService;
+import com.example.entity.User;
+import com.example.service.UserService;
 import com.github.pagehelper.PageInfo;
+
 import org.springframework.web.bind.annotation.*;
+
 import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * Description:公告信息表前端操作接口
+ * Description:用户管理接口
  * Param:
  * return:
  * Author:boker
  * Date:
  */
 @RestController
-@RequestMapping("/notice")
-public class NoticeController {
+@RequestMapping("/user")
+public class UserController {
 
     @Resource
-    private NoticeService noticeService;
+    private UserService userService;
 
     /**
      * 新增
      */
     @PostMapping("/add")
-    public Result add(@RequestBody Notice notice) {
-        noticeService.add(notice);
+    public Result add(@RequestBody User user) {
+        userService.add(user);
         return Result.success();
     }
 
@@ -36,7 +38,7 @@ public class NoticeController {
      */
     @DeleteMapping("/delete/{id}")
     public Result deleteById(@PathVariable Integer id) {
-        noticeService.deleteById(id);
+        userService.deleteById(id);
         return Result.success();
     }
 
@@ -45,7 +47,7 @@ public class NoticeController {
      */
     @DeleteMapping("/delete/batch")
     public Result deleteBatch(@RequestBody List<Integer> ids) {
-        noticeService.deleteBatch(ids);
+        userService.deleteBatch(ids);
         return Result.success();
     }
 
@@ -53,8 +55,8 @@ public class NoticeController {
      * 修改
      */
     @PutMapping("/update")
-    public Result updateById(@RequestBody Notice notice) {
-        noticeService.updateById(notice);
+    public Result updateById(@RequestBody User user) {
+        userService.updateById(user);
         return Result.success();
     }
 
@@ -63,16 +65,16 @@ public class NoticeController {
      */
     @GetMapping("/selectById/{id}")
     public Result selectById(@PathVariable Integer id) {
-        Notice notice = noticeService.selectById(id);
-        return Result.success(notice);
+        User user = userService.selectById(id);
+        return Result.success(user);
     }
 
     /**
      * 查询所有
      */
     @GetMapping("/selectAll")
-    public Result selectAll(Notice notice ) {
-        List<Notice> list = noticeService.selectAll(notice);
+    public Result selectAll(User user ) {
+        List<User> list = userService.selectAll(user);
         return Result.success(list);
     }
 
@@ -80,10 +82,10 @@ public class NoticeController {
      * 分页查询
      */
     @GetMapping("/selectPage")
-    public Result selectPage(Notice notice,
+    public Result selectPage(User user,
                              @RequestParam(defaultValue = "1") Integer pageNum,
                              @RequestParam(defaultValue = "10") Integer pageSize) {
-        PageInfo<Notice> page = noticeService.selectPage(notice, pageNum, pageSize);
+        PageInfo<User> page = userService.selectPage(user, pageNum, pageSize);
         return Result.success(page);
     }
 

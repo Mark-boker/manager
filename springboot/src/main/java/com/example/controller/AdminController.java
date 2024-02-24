@@ -9,8 +9,12 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * 管理员前端操作接口
- **/
+ * Description:管理员前端操作接口
+ * Param:
+ * return:
+ * Author:boker
+ * Date:
+ */
 @RestController
 @RequestMapping("/admin")
 public class AdminController {

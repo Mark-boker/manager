@@ -14,7 +14,11 @@ import java.net.URLEncoder;
 import java.util.List;
 
 /**
- * 文件接口
+ * Description:文件接口
+ * Param:
+ * return:
+ * Author:boker
+ * Date:
  */
 @RestController
 @RequestMapping("/files")
