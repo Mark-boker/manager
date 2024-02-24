@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 
 /**
- * 基础前端接口
+ * Description:基础前端接口
+ * Param:
+ * return:
+ * Author:boker
+ * Date:
  */
 @RestController
 public class WebController {
