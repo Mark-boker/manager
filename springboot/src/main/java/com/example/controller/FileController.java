@@ -35,6 +35,7 @@ public class FileController {
     @PostMapping("/upload")
     public Result upload(MultipartFile file) {
         String flag;
+        //加锁避免多线程错误
         synchronized (FileController.class) {
             flag = System.currentTimeMillis() + "";
             ThreadUtil.sleep(1L);
