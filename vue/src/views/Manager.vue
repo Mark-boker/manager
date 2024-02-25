@@ -73,7 +73,7 @@ export default {
     }
   },
   created() {
-    if (!this.user.id) {
+    if (!this.user.id || this.user.role !== 'ADMIN') { //判断只允许管理员登陆后台
       this.$router.push('/login')
     }
   },

@@ -5,7 +5,7 @@
 
 .manager-header {
     display: flex;
-    background-color: #2c334c;
+    background-color: #578bba;
 }
 
 .manager-header-left {
@@ -26,7 +26,7 @@
     margin-left: 5px;
     font-size: 20px;
     font-weight: bold;
-    color: #ddd
+    color: #eee
 }
 
 .manager-header-center {
@@ -47,7 +47,7 @@
     display: flex;
     align-items: center;
     padding-right: 10px;
-    color: #ccc;
+    color: #eee;
     cursor: default
 }
 
@@ -101,65 +101,64 @@
     margin-top: 10px;
 }
 
-.card {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-}
-
 /* ElementUI */
 .el-menu {
     width: 200px;
     height: 100%;
-    background-color: #222b40;
+    background-color: #dde6ed;
 }
 
 .el-submenu__title {
-    color: #ccc;
+    color: #46679a;
     height: 50px;
     line-height: 50px;
+}
+
+.el-submenu__title i {
+    color: #46679a;
 }
 
 .el-menu-item {
-    color: #ccc;
+    color: #46679a;
     height: 50px;
     line-height: 50px;
-    background-color: #222b40 !important; /* 必须加上这个背景色，否则鼠标离开会出现白色 */
+    background-color: #dde6ed !important; /* 必须加上这个背景色，否则鼠标离开会出现白色 */
+}
+.el-menu-item i {
+    color: #46679a;
 }
 
 .el-menu-item.is-active {
-    /*background-color: #2bb7e5 !important;*/
-    /*color: #fff;*/
+    background-color: #4e76a8 !important;
+    color: #fff;
 }
 
 .el-menu--inline .el-menu-item {
     padding-left: 50px !important;
 }
 
-.el-menu .is-active {
-    color: #3399ff !important;
-}
+/*.el-menu .is-active {*/
+/*    color: #4e76a8 !important;*/
+/*}*/
 
 .el-submenu__title:hover {
-    background-color: #222 !important;
+    background-color: #dde6ed !important;
 }
 
 .el-menu-item:not(.is-active):hover {
-    /*background-color: #0376bf !important;*/
-    /*color: #fff;*/
+    background-color: #94b1c9 !important;
 }
 
-.el-menu-item:hover {
-    background-color: #222 !important;
-}
+/*.el-menu-item:hover {*/
+/*    background-color: #94b1c9 !important;*/
+/*}*/
 
 .el-submenu__icon-arrow {
     margin-top: -5px;
 }
 
 .el-breadcrumb__inner {
-    color: #ccc !important;
+    color: #eee !important;
 }
 
 .el-dropdown-menu {
