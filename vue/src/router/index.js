@@ -24,6 +24,7 @@ const routes = [
       { path: 'notice', name: 'Notice', meta: { name: '公告信息' }, component: () => import('../views/manager/Notice') },
       { path: 'user', name: 'User', meta: { name: '用户信息' }, component: () => import('../views/manager/User') },
       { path: 'category', name: 'Category', meta: { name: '资讯分类' }, component: () => import('../views/manager/Category') },
+      { path: 'news', name: 'News', meta: { name: '资讯信息' }, component: () => import('../views/manager/News') },
     ]
   },
   {
