@@ -149,16 +149,16 @@
     background-color: #f8a23d !important;
 }
 
-/*.el-menu-item:hover {*/
-/*    background-color: #94b1c9 !important;*/
-/*}*/
+.el-menu-item:hover {
+    background-color: #222 !important;
+}
 
 .el-submenu__icon-arrow {
     margin-top: -5px;
 }
 
 .el-breadcrumb__inner {
-    color: #eee !important;
+    color: #ccc !important;
 }
 
 .el-dropdown-menu {
