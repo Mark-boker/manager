@@ -90,4 +90,13 @@ public class NewsController {
         return Result.success(page);
     }
 
+    /**
+     * 分页查询
+     */
+    @GetMapping("/selectTopNews")
+    public Result selectPage(@RequestParam String sort) {
+        List<News> list = newsService.selectTopNews(sort);
+        return Result.success(list);
+    }
+
 }

@@ -41,4 +41,8 @@ public interface NewsMapper {
      */
     List<News> selectAll(News news);
 
+    /**
+     * 查询热度新闻
+     */
+    List<News> selectTopNews(String sort);
 }

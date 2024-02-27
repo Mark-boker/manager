@@ -14,6 +14,7 @@
         from news
         <where>
             <if test="title != null"> and title like concat('%', #{title}, '%')</if>
+            <if test="category != null"> and category =#{category}</if>
         </where>
         order by id desc
     </select>
@@ -21,8 +22,19 @@
     <select id="selectById" resultType="com.example.entity.News">
         select
         <include refid="Base_Column_List" />
-        from news
+        from new
         where id = #{id}
+    </select>
+
+    <select id="selectTopNews" resultType="com.example.entity.News">
+        select
+        <include refid="Base_Column_List" />
+        from news
+        order by
+        <if test="sort == 'new'">id</if>
+        <if test="sort == 'hot'">count</if>
+        desc
+        limit 8
     </select>
 
     <delete id="deleteById">

@@ -80,4 +80,11 @@ public class NewsService {
         return PageInfo.of(list);
     }
 
+
+    /**
+     * 热度新闻查询
+     */
+    public List<News> selectTopNews(String sort) {
+        return newsMapper.selectTopNews(sort);
+    }
 }

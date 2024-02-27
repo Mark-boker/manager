@@ -4,11 +4,11 @@
     font-size: 12px
 }
 .front-header {
+    margin: 0 auto;
     display: flex;
     height: 60px;
     line-height: 60px;
-    border-bottom: 1px solid #eee;
-    background: white;
+    background-color: #f8a23d ;
 }
 .front-header-left {
     width: 350px;
@@ -23,7 +23,7 @@
 }
 .front-header-left .title {
     flex: 1;
-    color: #355476;
+    color: #fff;
     cursor: pointer;
     margin-left: 10px;
     font-size: 20px;
@@ -37,21 +37,39 @@
     padding-right: 20px;
     text-align: right;
 }
+/*顶栏效果*/
 .front-header-dropdown {
     display: flex;
     align-items: center;
     justify-content: right;
+    color: white;
+    cursor: pointer;
 }
 .el-dropdown-menu {
-    width: 100px !important;
     text-align: center !important;
 }
 
 /*页面具体样式自定义*/
-.main-content {
-    width: 100%;
-    margin: 5px auto;
+.el-menu {
+    background-color: #f8a23d ;
 }
+.el-menu-item {
+    color: #333 !important;
+}
+.el-menu-item.is-active {
+    background-color: #f8a23d  !important;
+    color: white !important;
+}
+.el-menu-item:not(.is-active):hover {
+    background-color: #aa7700 !important;
+    color: white !important;
+}
+
+.main-content {
+    width: 70%;
+    margin: 10px auto;
+}
+
 /* ElementUI 样式覆盖 */
 .el-menu.el-menu--horizontal {
     border: none !important;
