@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card" style="padding: 15px">
-      您好，{{ user?.name }}！欢迎使用本系统
+      您好，{{ user?.name }}！欢迎使用长者线上平台
     </div>
 
     <div style="display: flex; margin: 10px 0">

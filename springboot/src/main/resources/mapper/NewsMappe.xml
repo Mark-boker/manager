@@ -22,7 +22,7 @@
     <select id="selectById" resultType="com.example.entity.News">
         select
         <include refid="Base_Column_List" />
-        from new
+        from news
         where id = #{id}
     </select>
 

@@ -5,6 +5,7 @@ import com.example.entity.News;
 import com.example.mapper.NewsMapper;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -86,5 +87,10 @@ public class NewsService {
      */
     public List<News> selectTopNews(String sort) {
         return newsMapper.selectTopNews(sort);
+    }
+
+
+    public void updateCountById(Integer id) {
+        newsMapper.updateCount(id);
     }
 }

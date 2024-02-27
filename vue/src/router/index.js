@@ -10,6 +10,7 @@ VueRouter.prototype.push = function push (location) {
 }
 
 const routes = [
+    //后台路由
   {
     path: '/',
     name: 'Manager',
@@ -32,6 +33,7 @@ const routes = [
 
     ]
   },
+  // 前台路由
   {
     path: '/front',
     name: 'Front',
@@ -39,6 +41,7 @@ const routes = [
     children: [
       { path: 'home', name: 'Home', meta: { name: '系统首页' }, component: () => import('../views/front/Home') },
       { path: 'person', name: 'Person', meta: { name: '个人信息' }, component: () => import('../views/front/Person') },
+      { path: 'newsDetail', name: 'NewsDetail',  component: () => import('../views/front/NewsDetail') },
     ]
   },
   { path: '/login', name: 'Login', meta: { name: '登录' }, component: () => import('../views/Login.vue') },
@@ -53,22 +56,22 @@ const router = new VueRouter({
 })
 
 // 注：不需要前台的项目，可以注释掉该路由守卫
-// 路由守卫
-// router.beforeEach((to ,from, next) => {
-//   let user = JSON.parse(localStorage.getItem("xm-user") || '{}');
-//   if (to.path === '/') {
-//     if (user.role) {
-//       if (user.role === 'USER') {
-//         next('/front/home')
-//       } else {
-//         next('/home')
-//       }
-//     } else {
-//       next('/login')
-//     }
-//   } else {
-//     next()
-//   }
-// })
+//路由守卫
+router.beforeEach((to ,from, next) => {
+  let user = JSON.parse(localStorage.getItem("xm-user") || '{}');
+  if (to.path === '/') {
+    if (user.role) {
+      if (user.role === 'USER') {
+        next('/front/home')
+      } else {
+        next('/home')
+      }
+    } else {
+      next('/login')
+    }
+  } else {
+    next()
+  }
+})
 
 export default router

@@ -62,6 +62,14 @@ public class NewsController {
     }
 
     /**
+     * 更新浏览量
+     */
+    @PutMapping("/updateCount/{id}")
+    public Result updateById(@PathVariable Integer id) {
+        newsService.updateCountById(id);
+        return Result.success();
+    }
+    /**
      * 根据ID查询
      */
     @GetMapping("/selectById/{id}")
@@ -91,7 +99,7 @@ public class NewsController {
     }
 
     /**
-     * 分页查询
+     * 查询最新/最热新闻(排序)
      */
     @GetMapping("/selectTopNews")
     public Result selectPage(@RequestParam String sort) {

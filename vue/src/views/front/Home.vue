@@ -36,7 +36,7 @@
             <div @click="loadCategoryNews(item.name)" class="category-item" :class="{ 'category-active' : item.name === category }" v-for="item in categoryList" :key="item.id">{{ item.name }}</div>
           </div>
           <div>
-            <div v-for="item in tableData" :key="item.id" class="card" style="display: flex; margin-bottom: 10px">
+            <div @click="$router.push('/front/newsDetail?id=' + item.id)" v-for="item in tableData" :key="item.id" class="card" style="display: flex; margin-bottom: 10px; cursor: pointer">
               <img :src="item.cover" alt="" style="width: 100px; height: 80px; border-radius: 5px">
               <div style="padding-left: 20px">
                 <div style="margin-bottom: 30px; font-size: 18px" class="line1">{{ item.title }}</div>
