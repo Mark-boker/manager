@@ -25,6 +25,11 @@ const routes = [
       { path: 'user', name: 'User', meta: { name: '用户信息' }, component: () => import('../views/manager/User') },
       { path: 'category', name: 'Category', meta: { name: '资讯分类' }, component: () => import('../views/manager/Category') },
       { path: 'news', name: 'News', meta: { name: '资讯信息' }, component: () => import('../views/manager/News') },
+      { path: 'activity', name: 'Activity', meta: { name: '公益活动' }, component: () => import('../views/manager/Activity') },
+      { path: 'serve', name: 'Serve', meta: { name: '养老服务' }, component: () => import('../views/manager/Serve') },
+      { path: 'nurseHouse', name: 'NurseHouse', meta: { name: '养老机构信息' }, component: () => import('../views/manager/NurseHouse') },
+
+
     ]
   },
   {
