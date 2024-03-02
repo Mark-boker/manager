@@ -8,7 +8,7 @@
     </div>
     <div style="height: calc(100vh - 60px); width: 60%; margin:  0 auto; display: flex; align-items: center">
       <div style="flex: 1">
-        <img src="@/assets/imgs/login.png" alt="" style="width: 100%; border-radius: 5px;">
+        <img src="@/assets/imgs/img.png" alt="" style="width: 100%; border-radius: 5px;">
       </div>
       <div style="width: 350px; padding: 50px 30px; box-shadow:  0 0 10px rgba(0, 0, 0 ,.1); background-color: white; border-radius: 5px;">
         <div style="text-align: center; font-size: 22px; margin-bottom: 30px; font-weight: bold; color: #f8a23d;">欢 迎 使 用</div>

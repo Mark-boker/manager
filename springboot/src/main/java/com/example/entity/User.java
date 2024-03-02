@@ -47,4 +47,20 @@ public class User extends Account implements Serializable {
      * 角色标识
      */
     private String role;
+
+    /**
+     * 身份证
+     */
+    private String idcard;
+
+    /**
+     * 志愿者（1是 0不是）
+     */
+    private String volunteer;
+
+    /**
+     * 志愿者证
+     */
+    private String vocard;
+
 }
