@@ -7,6 +7,7 @@ package com.example.controller;
  * Author:boker
  * Date:
  */
+
 import com.example.common.Result;
 import com.example.entity.Comment;
 import com.example.service.CommentService;
@@ -73,7 +74,7 @@ public class CommentController {
      * 查询所有
      */
     @GetMapping("/selectAll")
-    public Result selectAll(Comment comment ) {
+    public Result selectAll(Comment comment) {
         List<Comment> list = commentService.selectAll(comment);
         return Result.success(list);
     }
@@ -89,4 +90,32 @@ public class CommentController {
         return Result.success(page);
     }
 
+
+    /**
+     * 查询前台评论列表
+     */
+    @GetMapping("/selectTree/{fid}/{module}")
+    public Result selectTree(@PathVariable Integer fid, @PathVariable String module) {
+        List<Comment> comment = commentService.selectTree(fid, module);
+        return Result.success(comment);
+    }
+
+    /**
+     * 递归删除评论
+     */
+
+    @DeleteMapping("/deepDelete/{id}")
+    public Result deepDelete(@PathVariable Integer id) {
+        commentService.deepDelete(id);
+        return Result.success();
+    }
+
+    /**
+     * 查询前台评论数量
+     */
+    @GetMapping("/selectCount/{fid}/{module}")
+    public Result selectCount(@PathVariable Integer fid, @PathVariable String module) {
+        Integer count= commentService.selectCount(fid, module);
+        return Result.success(count);
+    }
 }

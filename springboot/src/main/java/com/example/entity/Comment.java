@@ -33,13 +33,16 @@ public class Comment implements Serializable {
      * 父级ID
      */
     private Integer pid;
+    /**
+     * 根ID
+     */
     private Integer rootId;
     /**
      * 评论时间
      */
     private String time;
     /**
-     * 关联ID
+     * 关联新闻ID
      */
     private Integer fid;
     /**
@@ -49,9 +52,19 @@ public class Comment implements Serializable {
 
     private List<Comment> children;
 
+    /**
+     * 用户
+     */
     private String userName;
 
+    /**
+     * 头像
+     */
     private String avatar;
 
+
+    /**
+     * 回复的用户
+     */
     private String replyUser;  // 回复给谁 就是谁的名称
 }

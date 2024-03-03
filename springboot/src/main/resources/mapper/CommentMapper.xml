@@ -10,24 +10,39 @@
 
     <select id="selectAll" resultType="com.example.entity.Comment">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from comment
         <where>
-            <if test="content != null"> and content like concat('%', #{content}, '%')</if>
+            <if test="content != null">and content like concat('%', #{content}, '%')</if>
         </where>
         order by id desc
     </select>
 
     <select id="selectById" resultType="com.example.entity.Comment">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from comment
         where id = #{id}
     </select>
 
+    <select id="selectTree" resultType="com.example.entity.Comment">
+        select comment.*, user.avatar, user.name as userName,u2.name as replyUser
+        from comment
+                 left join user
+                           on comment.user_id = user.id
+                 left join comment c2
+                           on c2.id = comment.pid
+                 left join user u2 on
+            c2.user_id = u2.id
+        where comment.fid = #{fid}
+          and comment.module = #{module}
+        order by comment.id desc
+    </select>
+
     <delete id="deleteById">
-        delete from comment
-        where  id = #{id}
+        delete
+        from comment
+        where id = #{id}
     </delete>
 
     <insert id="insert" parameterType="com.example.entity.Comment" useGeneratedKeys="true" keyProperty="id">

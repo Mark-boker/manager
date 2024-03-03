@@ -7,7 +7,10 @@ package com.example.mapper;
  * Author:boker
  * Date:
  */
+
 import com.example.entity.Comment;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -38,4 +41,21 @@ public interface CommentMapper {
      */
     List<Comment> selectAll(Comment comment);
 
+    /**
+     * 树状查询
+     */
+    List<Comment> selectTree(@Param("fid") Integer fid, @Param("module") String module);
+
+    /**
+     * 查询父评论
+     */
+    @Select("select  * from  comment where  pid =#{pid}")
+    List<Comment> selectByPid(Integer pid);
+
+
+    /**
+     * 查询评论数
+     */
+    @Select("select count(*) from  comment where fid =#{fid} and module =#{module}")
+    Integer selectCount(@Param("fid") Integer fid, @Param("module") String module);
 }
