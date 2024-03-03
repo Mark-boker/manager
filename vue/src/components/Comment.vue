@@ -76,7 +76,13 @@ export default {
       commentList: [],
       user: JSON.parse(localStorage.getItem('xm-user') || '{}')
     }
-  },
+
+    // return {
+    //   id: this.$route.query.id,
+    //
+    // }
+  }
+  ,
   created() {
     this.loadComment()
   },
@@ -98,8 +104,8 @@ export default {
       this.$set(comment, 'showReply',  !comment.showReply)
     },
     addComment(pComment) {  // pComment表示父级的评论对象
-      this.form.module = 'news'
-      this.form.fid = this.id
+      this.form.module = this.module
+      this.form.fid = this.fid
       this.form.userId = this.user.id
       if (pComment) {   // 表示回复
         this.form.pid = pComment.id
