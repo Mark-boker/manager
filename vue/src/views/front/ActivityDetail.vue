@@ -25,12 +25,15 @@
       </div>
 
     </div>
+    <Comment :fid ="id"  module="activity"/>
   </div>
 </template>
 
 <script>
+import Comment from "@/components/Comment";
 export default {
   name: "ActivityDetail",
+  components: {Comment},
   data() {
     return {
       id: this.$route.query.id,

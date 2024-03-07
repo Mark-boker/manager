@@ -76,13 +76,7 @@ export default {
       commentList: [],
       user: JSON.parse(localStorage.getItem('xm-user') || '{}')
     }
-
-    // return {
-    //   id: this.$route.query.id,
-    //
-    // }
-  }
-  ,
+  },
   created() {
     this.loadComment()
   },
