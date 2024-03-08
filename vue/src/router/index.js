@@ -40,11 +40,13 @@ const routes = [
     name: 'Front',
     component: () => import('../views/Front.vue'),
     children: [
-      { path: 'home', name: 'Home', meta: { name: '系统首页' }, component: () => import('../views/front/Home') },
-      { path: 'person', name: 'Person', meta: { name: '个人信息' }, component: () => import('../views/front/Person') },
-      { path: 'newsDetail', name: 'NewsDetail',  component: () => import('../views/front/NewsDetail') },
-      { path: 'activityDetail', name: 'ActivityDetail',  component: () => import('../views/front/ActivityDetail') },
-      { path: 'activity', name: 'Activity',  component: () => import('../views/front/Activity') },
+      { path: 'home', name: 'FHome', meta: { name: '系统首页' }, component: () => import('../views/front/Home') },
+      { path: 'person', name: 'FPerson', meta: { name: '个人信息' }, component: () => import('../views/front/Person') },
+      { path: 'newsDetail', name: 'FNewsDetail',  component: () => import('../views/front/NewsDetail') },
+      { path: 'activityDetail', name: 'FActivityDetail',  component: () => import('../views/front/ActivityDetail') },
+      { path: 'activity', name: 'FActivity',  component: () => import('../views/front/Activity') },
+      { path: 'activitySign', name: 'FActivitySign',  component: () => import('../views/front/ActivitySign') },
+
     ]
   },
   { path: '/login', name: 'Login', meta: { name: '登录' }, component: () => import('../views/Login.vue') },

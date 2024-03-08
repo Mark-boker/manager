@@ -32,5 +32,9 @@ public class ActivitySign implements Serializable {
     private String reason;
     /** 报名人 */
     private String userName;
+    /** 活动名 */
+    private String activityName;
+    /** 活动封面 */
+    private String activityCover;
 
 }
