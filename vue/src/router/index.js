@@ -30,6 +30,7 @@ const routes = [
       { path: 'serve', name: 'Serve', meta: { name: '养老服务' }, component: () => import('../views/manager/Serve') },
       { path: 'nurseHouse', name: 'NurseHouse', meta: { name: '养老机构信息' }, component: () => import('../views/manager/NurseHouse') },
       { path: 'comment', name: 'Comment', meta: { name: '评论信息' }, component: () => import('../views/manager/Comment') },
+      { path: 'activitySign', name: 'ActivitySign', meta: { name: '活动报名' }, component: () => import('../views/manager/ActivitySign') },
 
     ]
   },
