@@ -7,11 +7,13 @@ package com.example.controller;
  * Author:boker
  * Date:
  */
+
 import com.example.common.Result;
 import com.example.entity.ActivitySign;
 import com.example.service.ActivitySignService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.*;
+
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -86,5 +88,15 @@ public class ActivitySignController {
         PageInfo<ActivitySign> page = activitySignService.selectPage(activitySign, pageNum, pageSize);
         return Result.success(page);
     }
+
+    /**
+     * 查询报名活动比例
+     */
+    @GetMapping("/selectCount")
+    public Result selectCount() {
+
+        return Result.success(activitySignService.selectCount());
+    }
+
 
 }

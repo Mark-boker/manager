@@ -7,8 +7,11 @@ package com.example.service;
  * Author:boker
  * Date:
  */
+import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.lang.Dict;
 import com.example.common.enums.RoleEnum;
+import com.example.entity.ActivitySign;
 import com.example.entity.Reserve;
 import com.example.mapper.ReserveMapper;
 import com.example.utils.TokenUtils;
@@ -17,6 +20,8 @@ import com.github.pagehelper.PageInfo;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -83,4 +88,21 @@ public class ReserveService {
         return PageInfo.of(list);
     }
 
+
+    /**
+     * 查询有效报名数据
+     */
+    public List<Dict> selectCount() {
+        List<Reserve> reserveList = reserveMapper.selectAll(null);
+        reserveList = reserveList.stream().filter(reserve -> "审核通过".equals(reserve.getStatus())
+                || "待审核".equals(reserve.getStatus())).collect(Collectors.toList());
+        Set<String> set = reserveList.stream().map(Reserve::getServeName).collect(Collectors.toSet());
+        List<Dict> list = CollUtil.newArrayList();
+        for (String name : set) {
+            long count = reserveList.stream().filter(reserve -> reserve.getServeName().equals(name)).count();
+            Dict dict = Dict.create().set("name", name).set("value", count);
+            list.add(dict);
+        }
+        return list;
+    }
 }

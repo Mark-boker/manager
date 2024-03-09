@@ -88,4 +88,14 @@ public class ReserveController {
         return Result.success(page);
     }
 
+
+    /**
+     * 查询报名服务比例
+     */
+    @GetMapping("/selectCount")
+    public Result selectCount() {
+
+        return Result.success(reserveService.selectCount());
+    }
+
 }
