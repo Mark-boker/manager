@@ -31,6 +31,7 @@ const routes = [
       { path: 'nurseHouse', name: 'NurseHouse', meta: { name: '养老机构信息' }, component: () => import('../views/manager/NurseHouse') },
       { path: 'comment', name: 'Comment', meta: { name: '评论信息' }, component: () => import('../views/manager/Comment') },
       { path: 'activitySign', name: 'ActivitySign', meta: { name: '活动报名' }, component: () => import('../views/manager/ActivitySign') },
+      { path: 'reserve', name: 'Reserve', meta: { name: '服务预约' }, component: () => import('../views/manager/Reserve') },
 
     ]
   },
@@ -46,7 +47,8 @@ const routes = [
       { path: 'activityDetail', name: 'FActivityDetail',  component: () => import('../views/front/ActivityDetail') },
       { path: 'activity', name: 'FActivity',  component: () => import('../views/front/Activity') },
       { path: 'activitySign', name: 'FActivitySign',  component: () => import('../views/front/ActivitySign') },
-
+        { path: 'serve', name: 'FServe',  component: () => import('../views/front/Serve') },
+      { path: 'reserve', name: 'FReserve',  component: () => import('../views/front/Reserve') },
     ]
   },
   { path: '/login', name: 'Login', meta: { name: '登录' }, component: () => import('../views/Login.vue') },
