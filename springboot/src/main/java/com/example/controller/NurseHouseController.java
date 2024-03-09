@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.example.controller;
 
 /**
  * Description:养老机构前端操作接口
@@ -57,6 +57,15 @@ public class NurseHouseController {
     @PutMapping("/update")
     public Result updateById(@RequestBody NurseHouse nurseHouse) {
         nurseHouseService.updateById(nurseHouse);
+        return Result.success();
+    }
+
+    /**
+     * 浏览统计
+     */
+    @PutMapping("/updateCount/{id}")
+    public Result updateCount(@PathVariable Integer id) {
+        nurseHouseService.updateCount(id);
         return Result.success();
     }
 
