@@ -49,6 +49,8 @@ const routes = [
       { path: 'activitySign', name: 'FActivitySign',  component: () => import('../views/front/ActivitySign') },
         { path: 'serve', name: 'FServe',  component: () => import('../views/front/Serve') },
       { path: 'reserve', name: 'FReserve',  component: () => import('../views/front/Reserve') },
+      { path: 'nurseHouse', name: 'FNurseHouse',  component: () => import('../views/front/NurseHouse') },
+      { path: 'houseDetail', name: 'HouseDetail',  component: () => import('../views/front/HouseDetail') },
     ]
   },
   { path: '/login', name: 'Login', meta: { name: '登录' }, component: () => import('../views/Login.vue') },
