@@ -36,6 +36,7 @@ public class ActivityService {
      * 新增
      */
     public void add(Activity activity) {
+
         activityMapper.insert(activity);
     }
 

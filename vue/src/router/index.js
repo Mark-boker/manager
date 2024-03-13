@@ -51,6 +51,7 @@ const routes = [
       { path: 'reserve', name: 'FReserve',  component: () => import('../views/front/Reserve') },
       { path: 'nurseHouse', name: 'FNurseHouse',  component: () => import('../views/front/NurseHouse') },
       { path: 'houseDetail', name: 'HouseDetail',  component: () => import('../views/front/HouseDetail') },
+      { path: 'activityPublish', name: 'ActivityPublish',  component: () => import('../views/front/ActivityPublish') },
     ]
   },
   { path: '/login', name: 'Login', meta: { name: '登录' }, component: () => import('../views/Login.vue') },

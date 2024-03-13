@@ -14,6 +14,7 @@
             <el-menu-item index="/front/activity">公益活动</el-menu-item>
             <el-menu-item index="/front/serve">养老服务</el-menu-item>
             <el-menu-item index="/front/nurseHouse">养老机构</el-menu-item>
+            <el-menu-item index="/front/activityPublish">活动发布</el-menu-item>
 						<el-menu-item index="/front/person">个人中心</el-menu-item>
           </el-menu>
         </div>
