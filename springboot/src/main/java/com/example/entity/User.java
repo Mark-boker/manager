@@ -43,6 +43,11 @@ public class User extends Account implements Serializable {
      * 头像
      */
     private String avatar;
+
+    /**
+     * 地址
+     */
+    private String address;
     /**
      * 角色标识
      */

@@ -5,7 +5,7 @@
 <mapper namespace="com.example.mapper.UserMapper">
 
     <sql id="Base_Column_List">
-        id,username,password,name,phone,email,avatar,role,idcard,vocard,volunteer
+        id,username,password,name,phone,email,avatar,role,idcard,vocard,volunteer,address
     </sql>
 
     <select id="selectAll" resultType="com.example.entity.User">
@@ -23,7 +23,7 @@
             <if test="role != null">and role= #{role}</if>
             <if test="idcard != null">and idcard = #{idcard}</if>
             <if test="vocard != null">and vocard = #{vocard}</if>
-
+            <if test="address != null">and address = #{address}</if>
         </where>
     </select>
 
@@ -54,6 +54,7 @@
             <if test="idcard != null">idcard,</if>
             <if test="vocard != null">vocard,</if>
             <if test="volunteer != null"> volunteer ,</if>
+            <if test="address != null">address,</if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="id != null">#{id},</if>
@@ -67,6 +68,7 @@
             <if test="idcard != null">#{idcard},</if>
             <if test="vocard != null">#{vocard},</if>
             <if test="volunteer != null">#{volunteer},</if>
+            <if test="address != null">#{address},</if>
         </trim>
     </insert>
 
@@ -102,6 +104,9 @@
             </if>
             <if test="vocard != null">
                 volunteer = 1,
+            </if>
+            <if test="address != null">
+                address = #{address},
             </if>
         </set>
         where id = #{id}
