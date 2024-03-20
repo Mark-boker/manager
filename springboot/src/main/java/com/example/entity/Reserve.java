@@ -32,8 +32,8 @@ public class Reserve implements Serializable {
     /** 预约服务名 */
     private String serveName;
     /** 预约人电话 */
-    private String phone;
+    private String userPhone;
     /** 预约地址 */
-    private String address;
+    private String userAddress;
 
 }

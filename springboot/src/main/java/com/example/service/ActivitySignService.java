@@ -113,14 +113,14 @@ public class ActivitySignService {
     public List<Dict> selectCount() {
         List<ActivitySign> activitySigns = activitySignMapper.selectAll(null);
         activitySigns = activitySigns.stream().filter(activitySign -> "审核通过".equals(activitySign.getStatus())
-                || "待审核".equals(activitySign.getStatus())).collect(Collectors.toList());
-        Set<String> set = activitySigns.stream().map(ActivitySign::getActivityName).collect(Collectors.toSet());
+                || "待审核".equals(activitySign.getStatus())).collect(Collectors.toList());//用流式操作过滤活动报名记录，只保留状态为"审核通过"或"待审核"的记录
+        Set<String> set = activitySigns.stream().map(ActivitySign::getActivityName).collect(Collectors.toSet());//存储在一个集合中，确保每个活动只计算一次参与人数。
         List<Dict> list = CollUtil.newArrayList();
         for (String name : set) {
             long count = activitySigns.stream().filter(activitySign -> activitySign.getActivityName().equals(name)).count();
             Dict dict = Dict.create().set("name", name).set("value", count);
             list.add(dict);
         }
-        return list;
+        return list;//返回字典
     }
 }

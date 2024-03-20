@@ -16,8 +16,8 @@
         <el-table-column prop="id" label="序号" width="70" align="center" sortable></el-table-column>
         <el-table-column prop="serveId" label="服务ID"></el-table-column>
         <el-table-column prop="serveName" label="服务名称"></el-table-column>
-        <el-table-column prop="phone" label="电话"></el-table-column>
-        <el-table-column prop="address" label="地址"></el-table-column>
+        <el-table-column prop="userPhone" label="电话"></el-table-column>
+        <el-table-column prop="userAddress" label="地址"></el-table-column>
         <el-table-column prop="userId" label="预约人ID"></el-table-column>
         <el-table-column prop="userName" label="预约人名称"></el-table-column>
         <el-table-column prop="time" label="预约时间"></el-table-column>

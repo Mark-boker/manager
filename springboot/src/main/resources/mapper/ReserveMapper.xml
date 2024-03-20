@@ -10,7 +10,7 @@
 
     <select id="selectAll" resultType="com.example.entity.Reserve">
         select
-        reserve.* ,serve.name as serveName ,user.name as userName
+        reserve.* ,serve.name as serveName ,user.name as userName,user.address as userAddress,user.phone as userPhone
         from reserve
         left join serve
         on reserve.serve_id =serve.id
@@ -24,6 +24,8 @@
             <if test="status != null">and status like concat('%', #{status}, '%')</if>
             <if test="reason != null">and reason like concat('%', #{reason}, '%')</if>
             <if test="userName != null">and userName like concat('%', #{userName}, '%')</if>
+            <if test="userAddress != null">and userAddress like concat('%', #{userAddress}, '%')</if>
+            <if test="userPhone != null">and userPhone like concat('%', #{userPhone}, '%')</if>
         </where>
         order by id desc
     </select>
