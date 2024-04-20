@@ -28,12 +28,19 @@
         <el-form-item label="邮箱" prop="email">
           <el-input v-model="user.email" placeholder="邮箱"></el-input>
         </el-form-item>
-        <el-form-item label="志愿者号" prop="email">
-          <el-input v-model="user.vocard" placeholder="志愿者号"></el-input>
+        <el-form-item label="志愿者证" prop="email">
+          <el-input v-model="user.vocard" placeholder="志愿者证"></el-input>
         </el-form-item>
         <el-form-item label="身份证" prop="email">
           <el-input v-model="user.idcard" placeholder="身份证"></el-input>
         </el-form-item>
+        <el-form-item label="地址" prop="email">
+          <el-input v-model="user.address" placeholder="地址"></el-input>
+        </el-form-item>
+
+<!--        <el-form-item label="身份" prop="email">-->
+<!--          <el-input v-model="user.volunteer" placeholder="身份"></el-input>-->
+<!--        </el-form-item>-->
         <div style="text-align: center; margin-bottom: 20px">
           <el-button type="primary" @click="update">保 存</el-button>
         </div>

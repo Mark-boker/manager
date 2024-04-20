@@ -105,5 +105,16 @@ public class ActivityService {
         List<Activity> list = activityMapper.selectAll(activity);
         return PageInfo.of(list);
     }
+    /**
+     * 分页查询用户发布活动
+     */
+    public PageInfo<Activity> selectPageUser(Activity activity, Integer pageNum, Integer pageSize, String userId) {
+        PageHelper.startPage(pageNum, pageSize);
+
+        List<Activity> list = activityMapper.selectByIdUser(userId);
+
+//        List<Activity> list = activityMapper.selectByIdUser(activity.getUserId());
+        return PageInfo.of(list);
+    }
 
 }

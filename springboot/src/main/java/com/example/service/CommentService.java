@@ -114,10 +114,10 @@ public class CommentService {
     public List<Comment> selectTree(Integer fid, String module) {
         List<Comment> commentList = commentMapper.selectTree(fid, module);
         // 筛选出最外层的节点
-        List<Comment> rootList = commentList.stream().filter(comment -> comment.getPid() == null).collect(Collectors.toList());
+        List<Comment> rootList = commentList.stream().filter(comment -> comment.getPid() == null).collect(Collectors.toList());//父评论ID为null的评论对象，这些评论对象被认为是根节点
         for (Comment root : rootList) {
             Integer rootId = root.getId();
-            List<Comment> children = commentList.stream().filter(comment -> rootId.equals(comment.getRootId())).collect(Collectors.toList());
+            List<Comment> children = commentList.stream().filter(comment -> rootId.equals(comment.getRootId())).collect(Collectors.toList());//父评论ID等于当前根节点ID的评论对象
             root.setChildren(children);
         }
         return rootList;

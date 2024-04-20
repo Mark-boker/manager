@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Description:用户管理业务类
@@ -26,6 +27,7 @@ import java.util.List;
  */
 @Service
 public class UserService {
+
 
     @Resource
     private UserMapper userMapper;
@@ -45,6 +47,7 @@ public class UserService {
             user.setName(user.getUsername());
         }
         user.setRole(RoleEnum.USER.name());
+
         userMapper.insert(user);
     }
 

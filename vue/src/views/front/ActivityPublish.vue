@@ -148,6 +148,7 @@ export default {
   methods: {
     handleAdd() {   // 新增数据
       this.form = {}  // 新增数据的时候清空数据
+      this.form.useId = this.user.id
       this.fromVisible = true   // 打开弹窗
       this.setRichText('')
     },
@@ -209,13 +210,15 @@ export default {
       }).catch(() => {
       })
     },
-    load(pageNum) {  // 分页查询
+    load(pageNum,useId = this.user.id) {  // 分页查询
       if (pageNum) this.pageNum = pageNum
-      this.$request.get('/activity/selectPage', {
+      // this.form.userId = this.user.id
+      this.$request.get('/activity/selectPageUser', {
         params: {
           pageNum: this.pageNum,
           pageSize: this.pageSize,
           name: this.name,
+          userId:useId,
         }
       }).then(res => {
         this.tableData = res.data?.list

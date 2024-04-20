@@ -3,7 +3,7 @@ package com.example.entity;
 import lombok.Data;
 
 /**
- * Description:资讯
+ * Description:资讯分类
  * Param:
  * return:
  * Author:boker

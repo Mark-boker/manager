@@ -38,5 +38,8 @@ public interface ActivityMapper {
      * 查询所有
      */
     List<Activity> selectAll(Activity activity);
-
+    /**
+     * 查询通过用户发布活动
+     */
+    List<Activity> selectByIdUser(String userId);
 }

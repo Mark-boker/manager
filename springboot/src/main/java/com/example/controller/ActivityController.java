@@ -87,5 +87,14 @@ public class ActivityController {
         PageInfo<Activity> page = activityService.selectPage(activity, pageNum, pageSize);
         return Result.success(page);
     }
-
+    /**
+     * 分页查询用户发布活动
+     */
+    @GetMapping("/selectPageUser")
+    public Result selectPageUser(Activity activity,
+                             @RequestParam(defaultValue = "1") Integer pageNum,
+                             @RequestParam(defaultValue = "10") Integer pageSize,String userId) {
+        PageInfo<Activity> page = activityService.selectPageUser(activity, pageNum, pageSize,userId);
+        return Result.success(page);
+    }
 }

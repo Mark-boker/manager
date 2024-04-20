@@ -5,7 +5,7 @@
 <mapper namespace="com.example.mapper.ActivityMapper">
 
     <sql id="Base_Column_List">
-        id,name,cover,descr,start,end,content,address
+        id,name,cover,descr,start,end,content,address,use_id
     </sql>
 
     <select id="selectAll" resultType="com.example.entity.Activity">
@@ -25,6 +25,13 @@
         where id = #{id}
     </select>
 
+    <select id="selectByIdUser" resultType="com.example.entity.Activity">
+        select
+        <include refid="Base_Column_List" />
+        from activity
+        where use_id = #{useId}
+    </select>
+
     <delete id="deleteById">
         delete from activity
         where  id = #{id}
@@ -41,6 +48,7 @@
             <if test="end != null">end,</if>
             <if test="content != null">content,</if>
             <if test="address != null">address,</if>
+            <if test="useId != null">use_id,</if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="id != null">#{id},</if>
@@ -51,6 +59,7 @@
             <if test="end != null">#{end},</if>
             <if test="content != null">#{content},</if>
             <if test="address != null">#{address},</if>
+            <if test="useId != null">#{useId},</if>
         </trim>
     </insert>
 

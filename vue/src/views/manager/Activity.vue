@@ -30,6 +30,7 @@
           </template>
         </el-table-column>
         <el-table-column prop="address" label="地址"></el-table-column>
+        <el-table-column prop="useId" label="发布人id"></el-table-column>
         <el-table-column label="操作" align="center" width="180">
           <template v-slot="scope">
             <el-button size="mini" type="primary" plain @click="handleEdit(scope.row)">编辑</el-button>
@@ -148,6 +149,7 @@ export default {
   methods: {
     handleAdd() {   // 新增数据
       this.form = {}  // 新增数据的时候清空数据
+      this.form.useId = this.user.id
       this.fromVisible = true   // 打开弹窗
       this.setRichText('')
     },
